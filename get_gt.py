@@ -21,12 +21,12 @@ from model import CSRNet
 import torch
 
 
-root = 'D:\GitHub\projects\ShanghaiTech_Crowd_Counting_Dataset'
+root = '/home/yqq/ShanghaiTech/'
 part_A_train = os.path.join(root,'part_A_final/train_data','images')
 part_A_test = os.path.join(root,'part_A_final/test_data','images')
 part_B_train = os.path.join(root,'part_B_final/train_data','images')
 part_B_test = os.path.join(root,'part_B_final/test_data','images')
-path_sets = [part_A_train,part_A_test]
+path_sets = [part_B_test]
 
 # 依次读取数据集中的每一张图片，将其放进列表img_paths
 img_paths = []

@@ -16,3 +16,4 @@ def save_checkpoint(state, is_best,task_id, filename='checkpoint.pth.tar'):
     torch.save(state, task_id+filename)
     if is_best:
         shutil.copyfile(task_id+filename, task_id+'model_best.pth.tar')            
+        # 把名为task_id+filename的文件复制到task_id+'model_best.pth.tar'中去

@@ -16,7 +16,7 @@ class CSRNet(nn.Module):
             mod = models.vgg16(pretrained = True)
             self._initialize_weights()# 对所有层的参数初始化
             for i in range(len(self.frontend.state_dict().items())):# 使用VGG16与训练好的参数对VGG的层（前端网络）初始化
-                self.frontend.state_dict().items()[i][1].data[:] = mod.state_dict().items()[i][1].data[:]
+                list(self.frontend.state_dict().items())[i][1].data[:] = list(mod.state_dict().items())[i][1].data[:]
     def forward(self,x):
         x = self.frontend(x)
         x = self.backend(x)

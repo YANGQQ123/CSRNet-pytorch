@@ -67,7 +67,7 @@ def main():
         train(train_list, model, criterion, optimizer, epoch)
         prec1 = validate(val_list, model, criterion)        
         is_best = prec1 < best_prec1
-        best_prec1 = min(prec1, best_prec1)
+        best_prec1 = min(prec1, best_prec1) #mae的比较
         print(' * best MAE {mae:.3f} '
               .format(mae=best_prec1))
         save_checkpoint({ ##保存

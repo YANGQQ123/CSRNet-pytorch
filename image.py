@@ -23,7 +23,7 @@ def load_data(img_path,train = True):
         if random.random()>0.8:
             target = np.fliplr(target)
             img = img.transpose(Image.FLIP_LEFT_RIGHT)  
-    target = cv2.resize(target,(target.shape[1]/8,target.shape[0]/8),interpolation = cv2.INTER_CUBIC)*64  
+    target = cv2.resize(target,(int(target.shape[1]/8),int(target.shape[0]/8)),interpolation = cv2.INTER_CUBIC)*64  
     return img,target
 
 ##这里其实是对数据集的一个处理，就是数据增强
